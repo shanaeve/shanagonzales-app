@@ -17,11 +17,18 @@ class UserServiceProvider extends ServiceProvider
         $this->app->singleton(UserService::class, function ($app) {
             $users = [
                 [
-                    'name' => 'Shana Eve',
+                    'id' => 1
+                    'name' => 'Margo',
                     'gender' => 'Male'
                 ],
                 [
+                    'id' => 2
                     'name' => 'Shana Eve',
+                    'gender' => 'Female'
+                ],
+                [
+                    'id' => 3
+                    'name' => 'Louise',
                     'gender' => 'Female'
                 ]
             ];

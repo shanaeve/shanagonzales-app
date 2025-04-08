@@ -1,48 +1,41 @@
 <?php
-
-namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-use App\Services\UserService;
-
-class UserServiceProvider extends ServiceProvider
-{
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register(): void
-    {
-        $this->app->singleton(UserService::class, function ($app) {
-            $users = [
-                [
-                    'id' => 1
-                    'name' => 'Margo',
-                    'gender' => 'Male'
-                ],
-                [
-                    'id' => 2
-                    'name' => 'Shana Eve',
-                    'gender' => 'Female'
-                ],
-                [
-                    'id' => 3
-                    'name' => 'Louise',
-                    'gender' => 'Female'
-                ]
-            ];
-            return new UserService($users);
-        });
-    }
-
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-}
+ 
+ namespace App\Providers;
+ 
+ use Illuminate\Support\ServiceProvider;
+ use App\Services\UserService;
+ 
+ class UserServiceProvider extends ServiceProvider
+ {
+     /**
+      * Register services.
+      */
+     public function register(): void
+     {
+         $this->app->singleton(UserService::class, function ($app) {
+             $users = [
+                 [
+                     'id' => 1,
+                     'name' => 'Shana Eve',
+                     'gender' => 'Male',
+                     'age' => '21'
+                 ], 
+                 [
+                     'id' => 2,
+                     'name' => 'Louise Margaret',
+                     'gender' => 'Female',
+                     'age' => '20'
+                 ]                           
+             ];
+             return new UserService($users);
+         });
+     }
+ 
+     /**
+      * Bootstrap services.
+      */
+     public function boot(): void
+     {
+         //
+     }
+ }

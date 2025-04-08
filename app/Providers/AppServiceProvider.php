@@ -1,24 +1,25 @@
 <?php
-
-namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Register any application services.
-     */
-    public function register(): void
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
-    {
-        view()->share('sharedVariables', 'buratchi tamagotchi');
-    }
-}
+ 
+ namespace App\Providers;
+ 
+ use Illuminate\Support\ServiceProvider;
+ 
+ class AppServiceProvider extends ServiceProvider
+ {
+     /**
+      * Register any application services.
+      */
+     public function register(): void
+     {
+         //
+     }
+ 
+     /**
+      * Bootstrap any application services.
+      */
+     public function boot(): void
+     {
+         //
+         view()->share('sharedVariable', 'Iam a shared variable from somewhere');
+     }
+ }
